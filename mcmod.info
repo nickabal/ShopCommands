@@ -1,0 +1,14 @@
+[
+    {
+        "modid": "commandshop",
+        "name": "CommandShop",
+        "version": "0.1.1",
+        "description": "Provides buy and sell commands",
+        "url": "https://spongepowered.org",
+        "authorList": [
+            "Rio_s2"
+        ],
+        "requiredMods": [],
+        "dependencies": []
+    }
+]
