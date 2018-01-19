@@ -98,10 +98,11 @@ public class PCommands {
 		    	  src.sendMessage(Text.of("Buying "+qty+" "+plugin.cfgs.displayName(itemName)+" for $"+plugin.cfgs.displayPrice(price)));
 
 		    	  Player player = (Player) src; 
+		    	  ItemType itemType = null;
 		    	  UniqueAccount acc = plugin.econ.getOrCreateAccount(player.getUniqueId()).get();
       			  TransactionResult result = acc.withdraw(plugin.econ.getDefaultCurrency(), BigDecimal.valueOf(price), Cause.of(EventContext.builder().build(), price));
 				    if (result.getResult() == ResultType.SUCCESS) {
-				    	  ItemType itemType = null;
+				    	  itemType = null;
 				    	  if(Sponge.getRegistry().getType(ItemType.class, itemName).isPresent()) {
 				    		  itemType = Sponge.getRegistry().getType(ItemType.class, itemName).get();
 					    	  ItemStack toGive = ItemStack.builder().itemType(itemType).quantity(qty).build();
